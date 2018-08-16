@@ -11,4 +11,4 @@ before_script:
   - bundle exec rails server -d
   - popd
 script:
-  - zapr --summary --debug --zap-path $TRAVIS_BUILD_DIR/ZAP_2.7.0/zap.sh http://localhost:3000/
+  - zapr --summary --debug --zap-path $TRAVIS_BUILD_DIR/ZAP_2.7.0/zap.sh  -config api.disablekey=true http://localhost:3000/
