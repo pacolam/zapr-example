@@ -2,7 +2,7 @@ language: ruby
 rvm:
   - 2.0.0
 before_install:
-  - wget http://sourceforge.net/projects/zaproxy/files/2.3.1/ZAP_2.3.1_Linux.tar.gz/download
+  - wget https://github.com/zaproxy/zaproxy/releases/download/2.7.0/ZAP_2.7.0_Linux.tar.gz 
   - tar -xvf download
   - git submodule update --init --recursive
 before_script:
@@ -11,4 +11,4 @@ before_script:
   - bundle exec rails server -d
   - popd
 script:
-  - zapr --summary --debug --zap-path $TRAVIS_BUILD_DIR/ZAP_2.3.1/zap.sh http://localhost:3000/
+  - zapr --summary --debug --zap-path $TRAVIS_BUILD_DIR/ZAP_2.7.0/zap.sh http://localhost:3000/
